@@ -1,6 +1,6 @@
 # Proyecto final C++
 
-**bjetivo:** aplicar el Paradigma Orientado a Objetos y estructuras de datos para resolver un problema
+**Objetivo:** aplicar el Paradigma Orientado a Objetos y estructuras de datos para resolver un problema
 que requiere de un programa informático.
 
 **Enunciado:** desarrollar una aplicación en C++ que aplique el Paradigma Orientado a Objetos y
