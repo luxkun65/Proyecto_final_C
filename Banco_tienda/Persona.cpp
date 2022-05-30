@@ -6,6 +6,7 @@ Persona::Persona()
 {
     nombre = apellido = password = correo = identidad = "-";
     numID = 0;
+    identidad = " ";
 
 }
 
@@ -23,6 +24,7 @@ void Persona::setNumID(){
 }
 
 void Persona::setNombre(){
+     getline(cin, nombre);
     fflush(stdin);
     cout<<"Ingrese el nombre de usuario: ";
     getline(cin, nombre);
@@ -30,7 +32,7 @@ void Persona::setNombre(){
 
 void Persona::setApellido(){
     fflush(stdin);
-    cout<<"Ingrese el nombre de usuario: ";
+    cout<<"Ingrese el apellido de usuario: ";
     getline(cin, apellido);
 }
 
@@ -44,16 +46,16 @@ void Persona::setCorreo(){
     cout<<"Ingrese correo electronico: ";
     getline(cin, correo);
 }
-
+void Persona::setIdentidad(){
+    fflush(stdin);
+    cout<<"Usted es: "<<identidad;
+}
 
 ///gets///
 
 
 string Persona::toString(){
-    return "ID: " + to_string(numID) + "\n" +
-           "Usuario: " + nombre + " " + apellido + "\n" +
-           "Password: " + password + "\n" +
-           "Correo: " + correo + "\n";
+    return to_string(numID) + ";" + nombre + ";" + apellido + ";" + password + ";" + correo + ";" + identidad;
 }
 
 long Persona::getNumID(){
@@ -71,5 +73,7 @@ string Persona::getPassword(){
 string Persona::getCorreo(){
     return correo;
 }
-
+string Persona::getIdentidad(){
+return identidad;
+}
 

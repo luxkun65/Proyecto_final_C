@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1653768098 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.cpp
+1653920076 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.cpp
 	"Administrador.h"
 	"Persona.h"
 	<iostream>
@@ -8,7 +8,7 @@
 	"Persona.h"
 	<iostream>
 
-1653767242 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.h
+1653947609 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.h
 	<iostream>
 
 1653767242 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.cpp
@@ -20,12 +20,14 @@
 	"Persona.h"
 	<iostream>
 
-1653767736 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/main.cpp
+1653946530 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/main.cpp
 	"Persona.h"
 	"Administrador.h"
 	"Trabajador.h"
 	"Cliente.h"
 	<iostream>
+	<fstream>
+	<sstream>
 
 1653766890 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.h
 	"Persona.h"
@@ -36,7 +38,7 @@
 	"Persona.h"
 	<iostream>
 
-1653767242 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.cpp
+1653934455 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.cpp
 	"Persona.h"
 	<iostream>
 

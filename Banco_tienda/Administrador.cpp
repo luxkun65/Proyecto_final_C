@@ -19,6 +19,7 @@ void Administrador::setSalarioAdmin(){
 salarioAdmin = 1000000*5;
 }
 
+
 double Administrador::getSalarioAdmin(){
 return salarioAdmin;
 }

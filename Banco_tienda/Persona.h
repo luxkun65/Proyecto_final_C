@@ -9,8 +9,8 @@ class Persona
         Persona();
         virtual ~Persona();
 
-        long numID;
-        string nombre, apellido, password, correo, identidad;
+
+
 
         void setNumID();
         void setNombre();
@@ -29,6 +29,9 @@ class Persona
 
 
     protected:
+
+    long numID;
+    string nombre, apellido, password, correo, identidad;
 
     private:
 };
