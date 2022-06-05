@@ -13,11 +13,13 @@ void login();
 ///administrador///
 void menuAdmin();
 //funciones de menu administrador//
-//Clientes//
 void generarArchivos();
 void listadoGeneral();
 void buscarXid();
-//trabajador//
+//en curso//
+//eliminacion de usuarios; lectura, busqueda y eliminacion de PQRS; (aceptar peticion)agregar o quitar $$ a cuenta cliente//
+void listaPQRS();
+void buscarPQRS();
 
 
 
@@ -30,9 +32,10 @@ void menuTrab();
 
 ///Cliente///
 void menuCli();
-
-
-
+//funciones del menu cliente//
+//en creacion
+//preguntar canidad de deinero en cuenta; generar PQRS; generar peticionde agregar $$ a cuenta
+void generalPQRS();
 
 
 
@@ -322,14 +325,202 @@ Administrador admin;
 
 
 }
-//Bucar usuarios por ID//
-void buscarXid(){
+//Lista por tipo de usuario//
+void listadoGeneral(){
+
+int opc;
+
+do{
+
 system("clear");
 //system("cls");
 
+int aux = 0;
+int cont = 0;
+opc = 0;
+cout<<"Escoja el tipo de persona a crear"<<endl;
+cout<<"1.Cliente"<<endl;
+cout<<"2.Trabajador"<<endl;
+cout<<"3.Administrador"<<endl;
+cout<<"0.Salir"<<endl;
+cin>>opc;
+
+switch(opc){
+    case 1:aux=1;break;
+    case 2:aux=2;break;
+    case 3:aux=3;break;
+    case 0:aux=0;break;
+    default: cout<<"Opcion incorrecta"<<endl;
+
+    }
+
+system("clear");
+//system("cls");
+
+
+
+if(aux==1){
+
 ifstream clienteArch("archivoCliente.csv", ios::in);
 if(!clienteArch){
-cout<<"error al abrir el archivo"<<endl<<endl;
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
+}
+else{
+
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(clienteArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+}
+cout<<"Hay un total de "<<cont<<" Clientes"<<endl;
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+clienteArch.close();
+}
+
+}
+
+
+if(aux==2){
+
+ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
+if(!trabajadorArch){
+cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
+}
+else{
+
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(trabajadorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+}
+cout<<"Hay un total de "<<cont<<" Trabajadores"<<endl;
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+trabajadorArch.close();
+}
+
+}
+
+
+if(aux==3){
+
+ifstream administradorArch("archivoAdminstrador.csv", ios::in);
+if(!administradorArch){
+cout<<"error al abrir el archivo 'archivoAdminstrador.csv'"<<endl<<endl;
+}
+else{
+
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(administradorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+}
+//system("pause");
+cout<<"Hay un total de "<<cont<<" Administradores"<<endl;
+system("read -p 'Press Enter to continue...' var");
+administradorArch.close();
+}
+
+}
+
+
+}while(opc!=0);
+}
+//Bucar usuarios por ID//
+void buscarXid(){
+int opc;
+
+do{
+
+system("clear");
+//system("cls");
+
+int aux = 0;
+int cont;
+cont=0;
+opc = 0;
+cout<<"Escoja el tipo de persona a buscar"<<endl;
+cout<<"1.Cliente"<<endl;
+cout<<"2.Trabajador"<<endl;
+cout<<"3.Administrador"<<endl;
+cout<<"4.Busqueda general"<<endl;
+cout<<"0.Salir"<<endl;
+cin>>opc;
+
+switch(opc){
+    case 1:aux=1;break;
+    case 2:aux=2;break;
+    case 3:aux=3;break;
+    case 4:aux=4;break;
+    case 0:aux=0;break;
+    default: cout<<"Opcion incorrecta"<<endl;
+
+    }
+
+system("clear");
+//system("cls");
+
+
+
+if(aux==1){
+ifstream clienteArch("archivoCliente.csv", ios::in);
+if(!clienteArch){
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
 }
 else{
 string buscarID;
@@ -354,13 +545,14 @@ if(buscarID.compare(numID) == 0 ){
 existe = true;
 cout<<numID<<endl;
 cout<<nombre<<" "<<apellido<<endl;
-cout<<correo<<" "<<password<<endl;
+cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-
+cont++;
 }
 
 }
+cout<<"Hay un total de "<<cont<<" Clientes con ID "<<buscarID<<endl;
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
 clienteArch.close();
@@ -371,24 +563,122 @@ cout<<"el cliente "<<buscarID<<" no esxiste\n";
 system("read -p 'Press Enter to continue...' var");
     }
 }
-
-
 }
-//Lista por tipo de usuario//
-void listadoGeneral(){
-system("clear");
-//system("cls");
+
+
+if(aux==2){
+ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
+if(!trabajadorArch){
+cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
+}
+else{
+string buscarID;
+bool existe = false;
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+cout<<"ingrese numero de ID a buscar: ";
+cin>>buscarID;
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(trabajadorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+if(buscarID.compare(numID) == 0 ){
+existe = true;
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+    }
+}
+cout<<"Hay un total de "<<cont<<" Trabajadores con ID "<<buscarID<<endl;
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+trabajadorArch.close();
+
+if (!existe){
+cout<<"el trabajador "<<buscarID<<" no esxiste\n";
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+    }
+}
+}
+
+
+if(aux==3){
+ifstream administradorArch("archivoAdminstrador.csv", ios::in);
+if(!administradorArch){
+cout<<"error al abrir el archivo 'archivoAdminstrador.csv'"<<endl<<endl;
+}
+else{
+string buscarID;
+bool existe = false;
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+cout<<"ingrese numero de ID a buscar: ";
+cin>>buscarID;
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(administradorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+if(buscarID.compare(numID) == 0 ){
+existe = true;
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+}
+}
+cout<<"Hay un total de "<<cont<<" Administradores con ID "<<buscarID<<endl;
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+administradorArch.close();
+
+if (!existe){
+cout<<"el Administrador "<<buscarID<<" no esxiste\n";
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+    }
+}
+}
+
+
+if(aux==4){
+bool existe = false;
+string buscarID;
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+cout<<"ingrese numero de ID a buscar: ";
+cin>>buscarID;
+cout<<"\n\n////////////////////////////////////\n\n";
+
+
 
 ifstream clienteArch("archivoCliente.csv", ios::in);
 if(!clienteArch){
-cout<<"error al abrir el archivo"<<endl<<endl;
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
 }
 else{
-
-string registro;
-string numID, nombre, apellido, password, correo, identidad;
-
-cout<<"\n\n////////////////////////////////////\n\n";
+existe = false;
 
 while(getline(clienteArch, registro)){
 
@@ -400,24 +690,145 @@ getline(token,password,';');
 getline(token,correo,';');
 getline(token,identidad,';');
 
-
+if(buscarID.compare(numID) == 0 ){
+existe = true;
 cout<<numID<<endl;
 cout<<nombre<<" "<<apellido<<endl;
-cout<<correo<<" "<<password<<endl;
+cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-
+cont++;
+    }
 }
+clienteArch.close();
+
+if (!existe){
+cout<<"No existe el cliente "<<buscarID<<endl;
+    }
+}
+
+//////////////////////////////////////////
+
+ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
+if(!trabajadorArch){
+cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
+}
+else{
+existe = false;
+
+while(getline(trabajadorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+if(buscarID.compare(numID) == 0 ){
+existe = true;
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+}
+}
+trabajadorArch.close();
+
+if (!existe){
+cout<<"No existe el trabajador "<<buscarID<<endl;
+    }
+}
+
+
+///////////////////////////
+
+ifstream administradorArch("archivoAdminstrador.csv", ios::in);
+if(!administradorArch){
+cout<<"error al abrir el archivo 'archivoAdminstrador.csv'"<<endl<<endl;
+}
+else{
+existe = false;
+
+while(getline(administradorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+if(buscarID.compare(numID) == 0 ){
+existe = true;
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<identidad<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+    }
+}
+cout<<"Hay un total de "<<cont<<" usurarios con ID "<<buscarID<<endl;
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
-clienteArch.close();
-}
+administradorArch.close();
+
+if (!existe){
+cout<<"No existe el Administrador "<<buscarID<<endl;
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+            }
+        }
+    }
+
+
+}while(opc != 0);
 
 }
+//lista de PQRS con contador//
+void listaPQRS(){}
+//buscar PQRS con contador//
+void buscarPQRS(){}
+//Agregar $$ a cuenta de cliente//
+//restar $$ a cuenta de cliente//
+
 
 //revisar PQRS; Eliminar personas;
 
-void menuCli(){cout<<"el cliente existe";}
+
+
+
+
+
+
+
+
+
+
+///ACCESO CLIENTE///
+//menu//
+void menuCli(){}
+//Generador de PQRS//
+void generalPQRS(){
+
+
+}
+//agregar $$ a la cuenta//
+
+
+
+
+
+
+
+
+
+
 void menuTrab(){cout<<"el trabajador existe";}
 
 
