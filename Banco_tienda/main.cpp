@@ -14,7 +14,14 @@ void login();
 void menuAdmin();
 //funciones de menu administrador//
 void generarArchivos();
+
+//busca si el cliente ya esta creado
+int getFrecuenciaCliente(string);
+int getFrecuenciaTrabajador(string);
+int getFrecuenciaAdministrador(string);
+//generar un listado general de usuarios//
 void listadoGeneral();
+//mostrar los usuarios buscados X ID//
 void buscarXid();
 //en curso//
 //eliminacion de usuarios; lectura, busqueda y eliminacion de PQRS; (aceptar peticion)agregar o quitar $$ a cuenta cliente//
@@ -172,6 +179,8 @@ switch(opc){
 
 
 
+
+
 ///Acceso de Admin///
 //menu//
 void menuAdmin(){
@@ -201,6 +210,9 @@ system("clear");
 
 
 }
+
+
+
 //Generador de usuarios//
 void generarArchivos(){
 
@@ -234,7 +246,7 @@ system("clear");
 
 
 
-
+//Cliente
 if(aux==1){
 
 Cliente cli;
@@ -246,25 +258,34 @@ Cliente cli;
     else{
 
     cli.setNumID();
-    cli.setNombre();
-    cli.setApellido();
-    cli.setPassword();
-    cli.setCorreo();
-    cli.setIdentidad();
+    if(getFrecuenciaCliente(to_string(cli.getNumID()))==0){
+        cli.setNombre();
+        cli.setApellido();
+        cli.setPassword();
+        cli.setCorreo();
+        cli.setIdentidad();
 
-    clienteArch<<cli.toString()<<endl;
+        clienteArch<<cli.toString()<<endl;
 
-    clienteArch.close();
+        clienteArch.close();
 
-    cout<<"\n\nse ingreso correctamente el cliente\n\n";
+        cout<<"\n\nse ingreso correctamente el cliente\n\n";
+        }
+        else{
+        cout<<"El cliente con numero de ID "<<cli.getNumID()<<" ya existe\n\n";
+        clienteArch.close();
         }
 
-        //system("pause");
-        system("read -p 'Press Enter to continue...' var");
 
-        }
+}
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+
+}
 
 
+
+//trabajador
  if(aux==2){
 Trabajador trab;
 
@@ -275,6 +296,7 @@ Trabajador trab;
     else{
 
     trab.setNumID();
+    if(getFrecuenciaTrabajador(to_string(trab.getNumID())) == 0){
     trab.setNombre();
     trab.setApellido();
     trab.setPassword();
@@ -287,13 +309,20 @@ Trabajador trab;
 
     cout<<"\n\nse ingreso correctamente el trabajador\n\n";
         }
+        else{
+        cout<<"El Trabajador con numero de ID "<<trab.getNumID()<<" ya existe\n\n";
+        trabajadorArch.close();
+        }
 
-        //system("pause");
-        system("read -p 'Press Enter to continue...' var");
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
 
     }
+}
 
 
+
+//administrador
 if(aux==3){
 Administrador admin;
 
@@ -304,6 +333,7 @@ Administrador admin;
     else{
 
     admin.setNumID();
+    if(getFrecuenciaAdministrador(to_string(admin.getNumID())) == 0){
     admin.setNombre();
     admin.setApellido();
     admin.setPassword();
@@ -316,15 +346,122 @@ Administrador admin;
 
     cout<<"\n\nse ingreso correctamente el administrado\n\n";
         }
-        //system("pause");
-        system("read -p 'Press Enter to continue...' var");
+        else{
+        cout<<"El Adminnistrador con numero de ID "<<admin.getNumID()<<" ya existe\n\n";
+        administradorArch.close();
+        }
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
 
     }
+}
+
 
 }while(opc != 0 );
 
+}
+
+
+
+
+
+//busca la cantidad de codigos iguales//
+
+int getFrecuenciaCliente(string num_id_buscar){
+
+int cont = 0;
+ifstream clienteArch("archivoCliente.csv", ios::in);
+if(!clienteArch){
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
+}
+else{
+
+string registro;
+string numID;
+
+while(getline(clienteArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+
+if(num_id_buscar.compare(numID) == 0 ) cont++;
+
+    }
+
+clienteArch.close();
+
+    }
+return cont;
+}
+
+
+
+int getFrecuenciaTrabajador(string num_id_buscar){
+
+int cont = 0;
+
+ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
+if(!trabajadorArch){
+cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
+}
+else{
+
+string registro;
+string numID;
+
+while(getline(trabajadorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+
+
+if(num_id_buscar.compare(numID) == 0 ) cont++;
+
 
 }
+
+trabajadorArch.close();
+
+}
+
+return cont;
+}
+
+
+
+int getFrecuenciaAdministrador(string num_id_buscar){
+
+int cont = 0;
+
+ifstream administradorArch("archivoAdminstrador.csv", ios::in);
+if(!administradorArch){
+cout<<"error al abrir el archivo 'archivoAdminstrador.csv'"<<endl<<endl;
+}
+else{
+
+string registro;
+string numID;
+
+while(getline(administradorArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+
+
+if(num_id_buscar.compare(numID) == 0 )cont++;
+}
+
+administradorArch.close();
+
+}
+return cont;
+
+}
+
+
+
+
+
 //Lista por tipo de usuario//
 void listadoGeneral(){
 
@@ -481,6 +618,11 @@ administradorArch.close();
 
 }while(opc!=0);
 }
+
+
+
+
+
 //Bucar usuarios por ID//
 void buscarXid(){
 int opc;
@@ -491,8 +633,6 @@ system("clear");
 //system("cls");
 
 int aux = 0;
-int cont;
-cont=0;
 opc = 0;
 cout<<"Escoja el tipo de persona a buscar"<<endl;
 cout<<"1.Cliente"<<endl;
@@ -512,11 +652,13 @@ switch(opc){
 
     }
 
+
 system("clear");
 //system("cls");
 
 
 
+//cliente
 if(aux==1){
 ifstream clienteArch("archivoCliente.csv", ios::in);
 if(!clienteArch){
@@ -548,11 +690,10 @@ cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
+
 }
 
 }
-cout<<"Hay un total de "<<cont<<" Clientes con ID "<<buscarID<<endl;
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
 clienteArch.close();
@@ -566,6 +707,8 @@ system("read -p 'Press Enter to continue...' var");
 }
 
 
+
+//trabajador
 if(aux==2){
 ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
 if(!trabajadorArch){
@@ -597,10 +740,8 @@ cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
     }
 }
-cout<<"Hay un total de "<<cont<<" Trabajadores con ID "<<buscarID<<endl;
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
 trabajadorArch.close();
@@ -614,6 +755,8 @@ system("read -p 'Press Enter to continue...' var");
 }
 
 
+
+//Administrador
 if(aux==3){
 ifstream administradorArch("archivoAdminstrador.csv", ios::in);
 if(!administradorArch){
@@ -645,16 +788,14 @@ cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
 }
 }
-cout<<"Hay un total de "<<cont<<" Administradores con ID "<<buscarID<<endl;
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
 administradorArch.close();
 
 if (!existe){
-cout<<"el Administrador "<<buscarID<<" no esxiste\n";
+cout<<"No existe el administrador "<<buscarID<<endl;
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
     }
@@ -662,6 +803,8 @@ system("read -p 'Press Enter to continue...' var");
 }
 
 
+
+//todos
 if(aux==4){
 bool existe = false;
 string buscarID;
@@ -697,7 +840,6 @@ cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
     }
 }
 clienteArch.close();
@@ -733,7 +875,6 @@ cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
 }
 }
 trabajadorArch.close();
@@ -770,30 +911,54 @@ cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
 cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
     }
 }
-cout<<"Hay un total de "<<cont<<" usurarios con ID "<<buscarID<<endl;
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+
 administradorArch.close();
 
 if (!existe){
 cout<<"No existe el Administrador "<<buscarID<<endl;
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
             }
         }
+
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+
     }
+
+
 
 
 }while(opc != 0);
 
 }
+
+
+//Modificador de usuarios//
+
+
+
+
+
+
+//eliminar usuarios//
+
+
+
+
+
+
+
+
+
 //lista de PQRS con contador//
-void listaPQRS(){}
+void listaPQRS(){
+
+}
 //buscar PQRS con contador//
-void buscarPQRS(){}
+void buscarPQRS(){
+
+}
 //Agregar $$ a cuenta de cliente//
 //restar $$ a cuenta de cliente//
 
