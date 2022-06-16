@@ -1,0 +1,196 @@
+# depslib dependency file v1.0
+1653920076 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+	<iostream>
+
+1653767761 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.h
+	"Persona.h"
+	<iostream>
+
+1653947609 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.h
+	<iostream>
+
+1653767242 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+	<iostream>
+
+1653765886 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.h
+	"Persona.h"
+	<iostream>
+
+1654399284 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1653766890 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.h
+	"Persona.h"
+	<iostream>
+
+1653768098 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+	<iostream>
+
+1653934455 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.cpp
+	"Persona.h"
+	<iostream>
+
+1655336148 source:c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+
+1655336148 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\administrador.h
+	"Persona.h"
+
+1655350806 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655351219 source:c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655351082 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\cliente.h
+	"Persona.h"
+
+1655351413 source:c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1655336148 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\trabajador.h
+	"Persona.h"
+
+1655350876 source:c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\persona.cpp
+	"Persona.h"
+
+1655336148 source:c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+
+1655336148 source:c:\users\cesar\desktop\banco_tienda\administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+
+1655336148 c:\users\cesar\desktop\banco_tienda\administrador.h
+	"Persona.h"
+
+1655350806 c:\users\cesar\desktop\banco_tienda\persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655336148 source:c:\users\cesar\desktop\banco_tienda\trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+
+1655336148 c:\users\cesar\desktop\banco_tienda\trabajador.h
+	"Persona.h"
+
+1655351219 source:c:\users\cesar\desktop\banco_tienda\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655351082 c:\users\cesar\desktop\banco_tienda\cliente.h
+	"Persona.h"
+
+1655404444 source:c:\users\cesar\desktop\banco_tienda\main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1655350876 source:c:\users\cesar\desktop\banco_tienda\persona.cpp
+	"Persona.h"
+
+1655336148 source:c:\users\cesar\desktop\q\banco_tiendaj\administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+
+1655336148 c:\users\cesar\desktop\q\banco_tiendaj\administrador.h
+	"Persona.h"
+
+1655350806 c:\users\cesar\desktop\q\banco_tiendaj\persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655351219 source:c:\users\cesar\desktop\q\banco_tiendaj\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655351082 c:\users\cesar\desktop\q\banco_tiendaj\cliente.h
+	"Persona.h"
+
+1655404444 source:c:\users\cesar\desktop\q\banco_tiendaj\main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1655336148 c:\users\cesar\desktop\q\banco_tiendaj\trabajador.h
+	"Persona.h"
+
+1655350876 source:c:\users\cesar\desktop\q\banco_tiendaj\persona.cpp
+	"Persona.h"
+
+1655336148 source:c:\users\cesar\desktop\q\banco_tiendaj\trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+
+1655336148 source:c:\users\cesar\desktop\banco_tiendac\administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+
+1655336148 c:\users\cesar\desktop\banco_tiendac\administrador.h
+	"Persona.h"
+
+1655350806 c:\users\cesar\desktop\banco_tiendac\persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655351219 source:c:\users\cesar\desktop\banco_tiendac\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655351082 c:\users\cesar\desktop\banco_tiendac\cliente.h
+	"Persona.h"
+
+1655350876 source:c:\users\cesar\desktop\banco_tiendac\persona.cpp
+	"Persona.h"
+
+1655336148 source:c:\users\cesar\desktop\banco_tiendac\trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+
+1655336148 c:\users\cesar\desktop\banco_tiendac\trabajador.h
+	"Persona.h"
+
+1655414333 source:c:\users\cesar\desktop\banco_tiendac\main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
