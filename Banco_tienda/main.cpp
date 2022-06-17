@@ -5,6 +5,7 @@
 #include<iostream>
 #include<fstream>
 #include<sstream>
+#include<vector>
 using namespace::std;
 
 ///general///
@@ -23,6 +24,10 @@ int getFrecuenciaAdministrador(string);
 void listadoGeneral();
 //mostrar los usuarios buscados X ID//
 void buscarXid();
+//modificacion de datos//
+void modificarUsuarios();
+//eliminacion de usuarios//
+void eliminarUsuarios();
 //en curso//
 //eliminacion de usuarios; lectura, busqueda y eliminacion de PQRS; (aceptar peticion)agregar o quitar $$ a cuenta cliente//
 void listaPQRS();
@@ -43,6 +48,10 @@ void menuCli();
 //en creacion
 //preguntar canidad de deinero en cuenta; generar PQRS; generar peticionde agregar $$ a cuenta
 void generalPQRS();
+
+
+
+
 
 
 
@@ -194,14 +203,20 @@ cout<<"Menu de opciones"<<endl;
 cout<<"1.Crear nuevas personas"<<endl;
 cout<<"2.Listado general"<<endl;
 cout<<"3.Buscar por ID"<<endl;
+cout<<"4.Modificar cliente por ID"<<endl;
+cout<<"5.Eliminar cliente por ID"<<endl;
 cout<<"0.Salir"<<endl;
 cin>>opc;
 switch(opc){
 case 1: generarArchivos();break;
 case 2: listadoGeneral();break;
 case 3: buscarXid();break;
+case 4: modificarUsuarios();break;
+case 5: eliminarUsuarios();break;
 case 0: break;
-default: cout<<"Opcion incorrecta"<<endl;
+default: {  cout<<"Opcion incorrecta"<<endl;
+            //system("pause");
+            system("read -p 'Press Enter to continue...' var");}
 }
 
 system("clear");
@@ -237,7 +252,9 @@ switch(opc){
     case 2:aux=2;break;
     case 3:aux=3;break;
     case 0:aux=0;break;
-    default: cout<<"Opcion incorrecta"<<endl;
+    default: {  cout<<"Opcion incorrecta"<<endl;
+            //system("pause");
+            system("read -p 'Press Enter to continue...' var");}
 
     }
 
@@ -271,6 +288,7 @@ Cliente cli;
 
         cout<<"\n\nse ingreso correctamente el cliente\n\n";
         }
+
         else{
         cout<<"El cliente con numero de ID "<<cli.getNumID()<<" ya existe\n\n";
         clienteArch.close();
@@ -475,7 +493,7 @@ system("clear");
 int aux = 0;
 int cont = 0;
 opc = 0;
-cout<<"Escoja el tipo de persona a crear"<<endl;
+cout<<"Escoja el tipo de persona a buscar"<<endl;
 cout<<"1.Cliente"<<endl;
 cout<<"2.Trabajador"<<endl;
 cout<<"3.Administrador"<<endl;
@@ -487,7 +505,9 @@ switch(opc){
     case 2:aux=2;break;
     case 3:aux=3;break;
     case 0:aux=0;break;
-    default: cout<<"Opcion incorrecta"<<endl;
+    default:{  cout<<"Opcion incorrecta"<<endl;
+            //system("pause");
+            system("read -p 'Press Enter to continue...' var");}
 
     }
 
@@ -648,7 +668,9 @@ switch(opc){
     case 3:aux=3;break;
     case 4:aux=4;break;
     case 0:aux=0;break;
-    default: cout<<"Opcion incorrecta"<<endl;
+    default:{  cout<<"Opcion incorrecta"<<endl;
+            //system("pause");
+            system("read -p 'Press Enter to continue...' var");}
 
     }
 
@@ -934,7 +956,128 @@ system("read -p 'Press Enter to continue...' var");
 }
 
 
+
+
+
 //Modificador de usuarios//
+void modificarUsuarios(){
+system("clear");
+//system("cls");
+
+
+ifstream clienteArch("archivoCliente.csv", ios::in);
+if(!clienteArch){
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
+}
+else{
+vector<string>all_regist_cli;
+
+string buscarID;
+bool existe = false;
+bool modifico = false;
+int opc = 0;
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+cout<<"ingrese numero de ID a buscar: ";
+cin>>buscarID;
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(clienteArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+if(buscarID.compare(numID) == 0 ){
+existe = true;
+cout<<"Datos actuales del cliente a modificar::"<<endl<<endl;
+cout<<"Numero de ID == "<<numID<<endl;
+cout<<"1.Nombre == "<<nombre<<endl;
+cout<<"2.Apellido == "<<apellido<<endl;
+cout<<"3.Password == "<<password<<endl;
+cout<<"4.Correo electronico == "<<correo<<endl;
+cout<<"5.Identidad == "<<identidad<<endl;
+cout<<"0.Ninguno"<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+
+    do{
+        cout<<"Seleccione el campo a modificar: ";
+        cin>>opc;
+
+
+    }while(opc < 0 || opc > 5);
+
+    fflush(stdin);
+    switch(opc){
+
+        case 1:{modifico = true;
+        getline(cin, nombre);///////////////////Linux////////
+                cout<<"ingrese el nuevo nombre: ";
+                getline(cin, nombre);};break;
+
+        case 2: {modifico = true;
+        getline(cin, apellido);////////////////linux//////////////
+                cout<<"ingrese el nuevo apellido: ";
+                getline(cin, apellido);};break;
+
+        case 3: {modifico = true;
+        getline(cin, password);////////////////////linux//////////////
+                cout<<"ingrese la nueva password: ";
+                getline(cin, password);};break;
+
+        case 4: {modifico = true;
+        getline(cin, correo);//////////////////////////linux//////////////////
+                cout<<"ingrese el nuevo correo: ";
+                getline(cin, correo);};break;
+
+        case 5: {modifico = true;
+        getline(cin, identidad);////////////////////linux//////////////
+                cout<<"ingrese el nuevo identidad: ";
+                getline(cin, identidad);};break;
+
+    }
+    all_regist_cli.push_back(numID+";" + nombre + ";" + apellido + ";" + password + ";" + correo + ";" + identidad);
+
+}
+
+else{
+all_regist_cli.push_back(registro);
+}
+
+}
+
+clienteArch.close();
+
+
+
+    if (existe)/*if existe == true*/{
+        if(modifico){
+            ofstream nuevo("archivoCliente.csv");
+            for(int i=0; i<int(all_regist_cli.size()); i++){
+                nuevo<<all_regist_cli[i]<<endl;
+            }
+
+            nuevo.close();
+            cout<<"\n\nSe modifico el cliente\n\n";
+
+        }
+
+    }
+    else{
+    cout<<"el cliente "<<buscarID<<" no esxiste en el archivo\n\n";
+        }
+
+    }
+
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+}
+
+
 
 
 
@@ -942,8 +1085,83 @@ system("read -p 'Press Enter to continue...' var");
 
 
 //eliminar usuarios//
+void eliminarUsuarios(){
+system("clear");
+//system("cls");
 
 
+ifstream clienteArch("archivoCliente.csv", ios::in);
+if(!clienteArch){
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
+}
+else{
+vector<string>regist_cli_notDelete;
+
+
+int opc = 0;
+string buscarID;
+bool existe = false;
+string registro;
+string numID, nombre, apellido, password, correo, identidad;
+cout<<"ingrese numero de ID a buscar: ";
+cin>>buscarID;
+cout<<"\n\n////////////////////////////////////\n\n";
+
+while(getline(clienteArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+getline(token,identidad,';');
+
+if(buscarID.compare(numID) == 0 ) existe = true;
+
+else regist_cli_notDelete.push_back(registro);
+
+
+}
+
+clienteArch.close();
+
+
+
+    if (existe)/*if existe == true*/{
+        do{
+
+            cout<<"ESTA SEGURO DE ELIMINAR LA CUENTA???  1.[si] 0.[no]"<<endl;
+            cin>>opc;
+
+                if(opc == 1){
+                    ofstream nuevo("archivoCliente.csv");
+                    for(int i=0; i<int(regist_cli_notDelete.size()); i++){
+                    nuevo<<regist_cli_notDelete[i]<<endl;
+                    }
+                 nuevo.close();
+                cout<<"\n\nSe Elimino el cliente\n\n";
+                }
+
+                else break;
+
+
+
+    }while(opc < 0 || opc > 1);
+
+
+
+
+    }
+    else{
+    cout<<"el cliente "<<buscarID<<" no esxiste en el archivo\n\n";
+        }
+
+    }
+
+//system("pause");
+system("read -p 'Press Enter to continue...' var");
+}
 
 
 

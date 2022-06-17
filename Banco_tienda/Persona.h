@@ -20,7 +20,7 @@ class Persona
         void setIdentidad();
         string toString();
 
-        long getNumID();
+        int getNumID();
         string getNombre();
         string getApellido();
         string getPassword();
@@ -30,7 +30,7 @@ class Persona
 
     protected:
 
-    long numID;
+    int numID;
     string nombre, apellido, password, correo, identidad;
 
     private:

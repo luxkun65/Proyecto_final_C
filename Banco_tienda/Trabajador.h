@@ -1,21 +1,20 @@
 #ifndef TRABAJADOR_H
 #define TRABAJADOR_H
-#include"Persona.h"
+#include "Administrador.h"
 #include<iostream>
 using namespace::std;
 
 
-class Trabajador:public Persona
+class Trabajador:public Administrador
 {
     public:
         Trabajador();
         virtual ~Trabajador();
 
-        double salarioTrab;
 
-        void setSalarioTrab();
+        void setSalario();
 
-        double getSalarioTrab();
+        double getSalario();
 
 
     protected:

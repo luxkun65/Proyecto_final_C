@@ -194,3 +194,41 @@
 	<fstream>
 	<sstream>
 
+1655435595 source:/home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+
+1655435595 /home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Administrador.h
+	"Persona.h"
+
+1655435595 /home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655435595 source:/home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655435595 /home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Cliente.h
+	"Persona.h"
+
+1655435595 source:/home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+
+1655435595 /home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Trabajador.h
+	"Persona.h"
+
+1655435595 source:/home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Persona.cpp
+	"Persona.h"
+
+1655435595 source:/home/kali/Documents/C++/Proyecto_final_C /banco_tiendatra/Banco_tiendaC/Trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+

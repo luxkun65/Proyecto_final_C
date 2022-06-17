@@ -10,14 +10,13 @@ class Administrador:public Persona
         Administrador();
         virtual ~Administrador();
 
-        double salarioAdmin;
 
-        void setSalarioAdmin();
+        virtual void setSalario();
 
-        double getSalarioAdmin();
+        virtual double getSalario();
 
     protected:
-
+        double salario;
     private:
 };
 

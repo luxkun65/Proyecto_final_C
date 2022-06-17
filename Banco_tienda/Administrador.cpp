@@ -6,7 +6,7 @@ using namespace::std;
 Administrador::Administrador()
 {
     identidad = "administrador";
-    salarioAdmin = 0;
+    salario = 0;
 }
 
 Administrador::~Administrador()
@@ -15,11 +15,11 @@ Administrador::~Administrador()
 }
 
 
-void Administrador::setSalarioAdmin(){
-salarioAdmin = 1000000*5;
+void Administrador::setSalario(){
+salario = 1000000*5;
 }
 
 
-double Administrador::getSalarioAdmin(){
-return salarioAdmin;
+double Administrador::getSalario(){
+return salario;
 }

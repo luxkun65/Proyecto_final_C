@@ -1,5 +1,6 @@
 #include "Persona.h"
 #include<iostream>
+#include<cstdlib>
 using namespace::std;
 
 Persona::Persona()
@@ -21,10 +22,12 @@ Persona::~Persona()
 void Persona::setNumID(){
     cout<<"Ingrese el numero de ID: ";
     cin>>numID;
+    //srand(time(NULL));
+    //numID = 1 + rand() % 100;
 }
 
 void Persona::setNombre(){
-     getline(cin, nombre);
+     getline(cin, nombre);//////////////////////linux////////////////////////
     fflush(stdin);
     cout<<"Ingrese el nombre de usuario: ";
     getline(cin, nombre);
@@ -58,7 +61,7 @@ string Persona::toString(){
     return to_string(numID) + ";" + nombre + ";" + apellido + ";" + password + ";" + correo + ";" + identidad;
 }
 
-long Persona::getNumID(){
+int Persona::getNumID(){
     return numID;
 }
 string Persona::getNombre(){
