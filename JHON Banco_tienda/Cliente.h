@@ -25,14 +25,12 @@ class Cliente:public Persona
         string toString();
         string toCSV();
 
-
     protected:
         double saldo;
         double gasto;
         double deuda;
         int descuento;
         string membresia;
-
     private:
 };
 

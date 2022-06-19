@@ -18,6 +18,13 @@ void sign_up();
 vector<Prestamo> vecPrestamos;
 vector<PQRS> vecPQRS;
 ///Cliente///
+//funcion guia y mensajes de cliente
+void guiaClientes();
+void cliente1();
+void cliente2();
+void cliente3();
+void cliente4();
+
 void menuCli(Cliente&);
 void compra(Cliente&);
 void verCarritoCompras(vector<Articulo>&, Cliente&);
@@ -33,15 +40,20 @@ void pagarDeuda(Cliente&);
 void borrarCuenta(Cliente&);
 void pedirPrestamo(Cliente&);
 void generaPQRS(Cliente&);
-///Prototipo
+///Prototipo trabajador
+
+void guiaTrabajadores();
+
+void trabajador1();
+void trabajador2();
+void trabajador3();
+void trabajadorCase4();
+
 void protoTrabajador();
 void revisaPrestamos();
 void actualizaDeuda(double);
 void revisaPQRS();
 
-
-
-////////la otra parte del codigo//////
 
 
 ///administrador///
@@ -61,18 +73,7 @@ void buscarXid();
 void modificarUsuarios();
 //eliminacion de usuarios//
 void eliminarUsuarios();
-//en curso//
 //eliminacion de usuarios; lectura, busqueda y eliminacion de PQRS; (aceptar peticion)agregar o quitar $$ a cuenta cliente//
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -145,6 +146,7 @@ void login(){
 
             if((logUsername.compare(username) == 0)&&(logPassword.compare(password)==0)){
                 existe = true;
+                protoTrabajador();
                 break;
             }
         }
@@ -361,17 +363,67 @@ void borrarCuenta(Cliente &cli){
     system("pause");
 }
 
+//implementación de funcion menu
+void guiaClientes(){
+    int opc;
+    do{
+            system("cls");
+        cout<<"MENU GUIA PARA CLIENTES"<<endl<<endl;
+        cout<<"1. Recargar la cuenta"<<endl;
+        cout<<"2. Comprar en la tienda"<<endl;
+        cout<<"3. Realizar un PQR"<<endl;
+        cout<<"4. Realizar un prestamo"<<endl;
+        cout<<"0. Regresar al menu guia principal"<<endl<<endl;
+        cout<<"Seleccione una opcion: ";
+        cin>>opc;
 
+        switch(opc){
+        case 1: cliente1(); break;
+        case 2: cliente2(); break;
+        case 3: cliente3(); break;
+        case 4: cliente4(); break;
+        case 0: break;
+        default: cout<<"Opcion incorrecta, por favor digite nuevamente"<<endl;
+        }
+        system("pause");
 
+    }while(opc != 0);
+}
 
+//implementacion de funciones mensaje
+void cliente1(){
+    system("cls");
+    cout<<"Para recargar la cuenta debe iniciar sesion en su cuenta, se le desplegara un menu"<<endl;
+    cout<<"predeterminado para clientes, en dicho menu debe seleccionar la opcion 'recargar la cuenta',"<<endl;
+    cout<<"posteriormente debe seleccionar el monto a recargar o digitar el deseado, dicho saldo se adicionara"<<endl;
+    cout<<"a su cuenta, puede consultar su saldo en la opcion 'cartera'"<<endl;
+}
 
+void cliente2(){
+    system("cls");
+    cout<<"Para comprar en la tienda debe iniciar sesion en su cuenta y dirigirse a la opcion tienda,"<<endl;
+    cout<<"en dicha opcion se le desplegara un submenu con diferentes articulos, seleccione"<<endl;
+    cout<<"el articulo de su gusto y presione en la opcion 'comprar'."<<endl;
+    cout<<"NOTA: asegurese de tener su cuenta con saldo de lo contrario"
+        " el producto no se comprara."<<endl;
 
+}
 
+void cliente3(){
+    system("cls");
+    cout<<"Para realizar un PQR (Preguntas, Quejas, Recursos) debe dirigirse a la opcion 'Realiza un PQR'"<<endl;
+    cout<<"Debe describir el problema detalladamente, nuestro personal se encargara de revisar su PQR en un"<<endl;
+    cout<<"plazo maximo de diez (10) dias habiles y le notificara su respuesta."<<endl;
 
+}
 
-
-
-
+void cliente4(){
+    system("cls");
+    cout<<"Para realizar un prestamo debe iniciar sesion en su cuenta, se le desplegara un menu"<<endl;
+    cout<<"Predeterminado para clientes, en dicho menu se debe escoger la opcion 'realizar un prestamo'"<<endl;
+    cout<<"debe especificar el motivo por el cual desea un prestamo, nuestro personal le notificara"<<endl;
+    cout<<"si su prestamo es aceptado, asi como si no lo es."<<endl;
+}
 
 //Ingreso de productos
 void ingresoProducto(string nom, string cal, double precio, vector<Articulo> &car){
@@ -604,6 +656,7 @@ void menuCli(Cliente &client){
         cout<<"4. Recargar cuenta."<<endl;
         cout<<"5. Pagar deuda."<<endl;
         cout<<"6. Eliminar cuenta"<<endl;
+        cout<<"7. Guia de usuario"<<endl;
         cout<<"0. Cerrar sesion."<<endl;
         cout<<"Opcion: ";
         cin>>opc;
@@ -614,11 +667,13 @@ void menuCli(Cliente &client){
             case 4: recargaCuenta(client);break;
             case 5: pagarDeuda(client);break;
             case 6: borrarCuenta(client);break;
+            case 7: guiaClientes(); break;
             case 0: break;
             default: cout<<"Opcion incorrecta"<<endl; system("pause");
         }
     }while(opc != 0);
 }
+
 
 ///PROTOTIPO TRABAJADOR
 void actualizaDeuda(double pres){
@@ -745,17 +800,24 @@ void protoTrabajador(){
         cout<<"Bienvenido empleado, por favor elige una opcion: "<<endl;
         cout<<"1. Revisa y acepta peticiones de Prestamos \n";
         cout<<"2. Revisa PQRS\n";
+        cout<<"3. Dar de baja la cuenta de un cliente"<<endl;
+        cout<<"4. Crear clientes"<<endl;
+        cout<<"5. Guia"<<endl;
         cout<<"0. Salir\n";
         cout<<"Eleccion: ";
         cin>>opc;
         switch(opc){
             case 1: revisaPrestamos();break;
             case 2: revisaPQRS();break;
+            case 3: modificarUsuarios(); break;
+            case 4: trabajadorCase4(); break;
+            case 5: guiaTrabajadores(); break;
             case 0: break;
             default: cout<<"Opcion incorrecta"<<endl;system("pause");
         }
     }while(opc != 0);
 }
+
 ///ACCESO GENERAL
 void menu(){
     int opc;
@@ -766,14 +828,12 @@ void menu(){
         cout<<"---------------------------------------------"<<endl;
         cout<<"1. Registrarse."<<endl;
         cout<<"2. Iniciar sesion"<<endl;
-        cout<<"3. PROTOTIPO TRABAJADOR"<<endl;
         cout<<"0. Salir de la aplicacion"<<endl;
         cout<<"Opcion: ";
         cin>>opc;
         switch(opc){
             case 1: sign_up();break;
             case 2: login();break;
-            case 3: protoTrabajador();break;
             case 0: break;
             default: cout<<"Opcion incorrecta"<<endl; system("pause");
         }
@@ -783,15 +843,112 @@ void menu(){
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///DECLARACION DE FUNCIONES TRABAJADOR///
 
 
+//implementacion funcion guia
+void guiaTrabajadores(){
+        int opc;
+    do{
+            system("cls");
+        cout<<"MENU GUIA PARA TRABAJADORES"<<endl<<endl;
+        cout<<"1. Aceptar o denegar PQR"<<endl;
+        cout<<"2. Dar de baja a un cliente"<<endl;
+        cout<<"3. Dar de baja su cuenta trabajador"<<endl;
+        cout<<"0. Regresar al menu guia principal"<<endl<<endl;
+        cout<<"Seleccione una opcion: ";
+        cin>>opc;
 
+        switch(opc){
+        case 1: trabajador1(); break;
+        case 2: trabajador2(); break;
+        case 3: trabajador3(); break;
+        case 0: break;
+        default: cout<<"Opcion incorrecta, por favor digite nuevamente"<<endl;
+        }
+        cout<<endl;
+        system("pause");
+
+    }while(opc != 0);
+}
+
+//implementacion funciones mensaje
+
+void trabajador1(){
+    system("cls");
+    cout<<"Para aceptar o denegar un PQR (Peticion, Queja, Recurso) debe iniciar sesion en su cuenta"<<endl;
+    cout<<"y se le abrira un menu predeterminado para trabajadores, en este menu debe seleccionar la"<<endl;
+    cout<<"opcion 'Aceptar o denegar PQR', alli se mostraran las diferentes PQR enviadas por los clientes"<<endl;
+    cout<<"debe leer detenidamente cada una de ellas y de acuerdo a sus bases, usted debera evaluar si es"<<endl;
+    cout<<"apropiada o no, si la es debe seleccionar la opcion 'aceptar PQR' O si no lo es 'denegar PQR'"<<endl;
+
+}
+
+void trabajador2(){
+    system("cls");
+    cout<<"Para dar de baja a un cliente debe de iniciar sesion en su cuenta, se le desplegara"<<endl;
+    cout<<"un menu, en dicho menu debe seleccional la opcion 'eliminar un cliente', debe ingresar"<<endl;
+    cout<<"el numero de ID de el cliente a eliminar, le pedira la confirmacion de si en verdad desea"<<endl;
+    cout<<"dar de baja la cuenta del cliente, debe confirmar y el cliente pasara a estado inactivo."<<endl;
+
+}
+
+void trabajador3(){
+    system("cls");
+    cout<<"Para crear clientes debe iniciar sesion en su cuenta, seleccionar la opcion"<<endl;
+    cout<<"#4, en dicha opcion se desplegara un menu para crear el cliente o cancelar"<<endl;
+    cout<<"la creacion en caso de error, debe seleccionar la opcion #1 para continuar"<<endl;
+    cout<<"con la creacion, debe ingresar los atributos correspondientes al cliente"<<endl;
+    cout<<"(Nombre, apellido, password y correo)"<<endl;
+}
+
+void trabajadorCase4(){
+int opc;
+int aux = 0;
+    system("cls");
+cout<<"Escoja el tipo de persona a crear"<<endl;
+cout<<"1.Cliente"<<endl;
+cout<<"0. Cancelar"<<endl;
+cout<<"Seleccione una opcion: ";
+cin>>opc;
+
+    switch(opc){
+    case 1: aux = 1; break;
+    case 0: break;
+    default: cout<<"Opcion incorrecta"<<endl;
+    }
+    if(aux==1){
+
+ system("cls");
+    Cliente cli;
+    ofstream clienteArch("archivoCliente.csv", ios::app);
+    if(!clienteArch){
+        cout<<"Error al crear el archivo 'archivoCliente.csv'"<<endl;
+    }else{
+        cli.setNumID();
+        cli.setNombre();
+        cli.setApellido();
+        cli.setPassword();
+        cli.setCorreo();
+
+        clienteArch<<cli.toCSV()<<endl;
+        clienteArch.close();
+
+        cout<<"\n\nUsuario creado exitosamente\n\n";
+        cout<<"Su informacion de usuario: "<<endl;
+        cout<<cli.toString();
+        system("pause");
+        }
+
+
+    }
+
+}
 
 
 ///Acceso de Admin///
 //menu//
 void menuAdmin(){
-
 int opc;
 
 do{
@@ -801,8 +958,7 @@ cout<<"Menu de opciones"<<endl;
 cout<<"1.Crear nuevas personas"<<endl;
 cout<<"2.Listado general"<<endl;
 cout<<"3.Buscar por ID"<<endl;
-cout<<"4.Modificar cliente por ID"<<endl;
-cout<<"5.Eliminar cliente por ID"<<endl;
+cout<<"4.Modificar/eliminar cliente por ID"<<endl;
 cout<<"0.Salir"<<endl;
 cin>>opc;
 switch(opc){
@@ -810,19 +966,21 @@ case 1: generarArchivos();break;
 case 2: listadoGeneral();break;
 case 3: buscarXid();break;
 case 4: modificarUsuarios();break;
-case 5: eliminarUsuarios();break;
 case 0: break;
 default: {  cout<<"Opcion incorrecta"<<endl;
             system("pause");
             }
 }
 
-
 system("cls");
 }while(opc !=0 );
 
-
 }
+
+
+
+
+
 
 
 
@@ -909,12 +1067,6 @@ Trabajador trab;
     trabajadorArch.close();
 
     cout<<"\n\nse ingreso correctamente el trabajador\n\n";
-       cout<<"Su informacion de usuario: "<<endl;
-       cout<<trab.getNumID()<<endl;
-        cout<<trab.getNombre()<<endl;
-        cout<<trab.getApellido()<<endl;
-        cout<<trab.getPassword()<<endl;
-        cout<<trab.getCorreo()<<endl;
         system("pause");
     }
 
@@ -941,14 +1093,6 @@ Administrador admin;
 
 
 cout<<"\n\nse ingreso correctamente el administrador\n\n";
-       cout<<"Su informacion de usuario: "<<endl;
-       cout<<admin.getNumID()<<endl;
-        cout<<admin.getNombre()<<endl;
-        cout<<admin.getApellido()<<endl;
-        cout<<admin.getPassword()<<endl;
-        cout<<admin.getCorreo()<<endl;
-        system("pause");
-        }
         //else{
         //cout<<"El Administrador con numero de ID "<<admin.getNumID()<<" ya existe\n\n";
         //administradorArch.close();
@@ -958,12 +1102,9 @@ system("pause");
 
 }
 
-
+}
 }while(opc != 0 );
 }
-
-
-
 
 
 
@@ -1102,27 +1243,37 @@ system("cls");
 
 
 if(aux==1){
+ifstream ClienArch("archivoCliente.csv", ios::in);
+if(!ClienArch){
+cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
+}
+else{
 
-    system("cls");
-    Cliente cli;
-    ofstream clienteArch("archivoCliente.csv", ios::app);
-    if(!clienteArch){
-        cout<<"Error al crear el archivo 'archivoCliente.csv'"<<endl;
-    }else{
-        cli.setNumID();
-        cli.setNombre();
-        cli.setApellido();
-        cli.setPassword();
-        cli.setCorreo();
+string registro;
+string numID, nombre, apellido, password, correo;
 
-        clienteArch<<cli.toCSV()<<endl;
-        clienteArch.close();
+cout<<"\n\n////////////////////////////////////\n\n";
 
-        cout<<"\n\nUsuario creado exitosamente\n\n";
-        cout<<"Su informacion de usuario: "<<endl;
-        cout<<cli.toString();
-        system("pause");
-    }
+while(getline(ClienArch, registro)){
+
+stringstream token(registro);
+getline(token,numID,';');
+getline(token,nombre,';');
+getline(token,apellido,';');
+getline(token,password,';');
+getline(token,correo,';');
+
+cout<<numID<<endl;
+cout<<nombre<<" "<<apellido<<endl;
+cout<<correo<<endl;
+cout<<"\n\n////////////////////////////////////\n\n";
+cont++;
+}
+cout<<"Hay un total de "<<cont<<" Clientes"<<endl;
+system("pause");
+ClienArch.close();
+}
+
 }
 
 
@@ -1135,7 +1286,7 @@ cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
 else{
 
 string registro;
-string numID, nombre, apellido, password, correo, identidad;
+string numID, nombre, apellido, password, correo;
 
 cout<<"\n\n////////////////////////////////////\n\n";
 
@@ -1147,12 +1298,10 @@ getline(token,nombre,';');
 getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
-getline(token,identidad,';');
 
 cout<<numID<<endl;
 cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
-cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
@@ -1173,7 +1322,7 @@ cout<<"error al abrir el archivo 'archivoAdminstrador.csv'"<<endl<<endl;
 else{
 
 string registro;
-string numID, nombre, apellido, password, correo, identidad;
+string numID, nombre, apellido, password, correo;
 
 cout<<"\n\n////////////////////////////////////\n\n";
 
@@ -1185,13 +1334,11 @@ getline(token,nombre,';');
 getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
-getline(token,identidad,';');
 
 
 cout<<numID<<endl;
 cout<<nombre<<" "<<apellido<<endl;
 cout<<correo<<endl;
-cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
@@ -1530,7 +1677,6 @@ system("pause");
 
 //Modificador de usuarios//
 void modificarUsuarios(){
-
 system("cls");
 
 
@@ -1546,7 +1692,7 @@ bool existe = false;
 bool modifico = false;
 int opc = 0;
 string registro;
-string numID, nombre, apellido, password, correo, identidad;
+string numID, nombre, apellido, password, correo, membresia, saldo, descuento, deuda, activo;
 cout<<"ingrese numero de ID a buscar: ";
 cin>>buscarID;
 cout<<"\n\n////////////////////////////////////\n\n";
@@ -1556,21 +1702,28 @@ while(getline(clienteArch, registro)){
 stringstream token(registro);
 getline(token,numID,';');
 getline(token,nombre,';');
-getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
-getline(token,identidad,';');
+getline(token,membresia, ';');
+getline(token,saldo,';');
+getline(token,descuento,';');
+getline(token,deuda,';');
+getline(token,activo,';');
 
 if(buscarID.compare(numID) == 0 ){
 existe = true;
 cout<<"Datos actuales del cliente a modificar::"<<endl<<endl;
-cout<<"Numero de ID == "<<numID<<endl;
-cout<<"1.Nombre == "<<nombre<<endl;
-cout<<"2.Apellido == "<<apellido<<endl;
+cout<<"1.Numero de ID == "<<numID<<endl;
+cout<<"2.Nombre == "<<nombre<<endl;
 cout<<"3.Password == "<<password<<endl;
 cout<<"4.Correo electronico == "<<correo<<endl;
-cout<<"5.Identidad == "<<identidad<<endl;
+cout<<"5.Membresia == "<<membresia<<endl;
+cout<<"6.saldo== "<<saldo<<endl;
+cout<<"7.descuento == "<<descuento<<endl;
+cout<<"8.deuda == "<<deuda<<endl;
+cout<<"9.Estado de la cuenta: "<<activo<<endl;
 cout<<"0.Ninguno"<<endl;
+
 cout<<"\n\n////////////////////////////////////\n\n";
 
     do{
@@ -1578,38 +1731,53 @@ cout<<"\n\n////////////////////////////////////\n\n";
         cin>>opc;
 
 
-    }while(opc < 0 || opc > 5);
+    }while(opc < 0 || opc > 9);
 
     fflush(stdin);
     switch(opc){
 
         case 1:{modifico = true;
-
-                cout<<"ingrese el nuevo nombre: ";
-                getline(cin, nombre);};break;
+                cout<<"ingrese el nuevo numero de ID: ";
+                getline(cin, numID);};break;
 
         case 2: {modifico = true;
-
-                cout<<"ingrese el nuevo apellido: ";
-                getline(cin, apellido);};break;
+                cout<<"ingrese el nuevo nombre de usuario: ";
+                getline(cin, nombre);};break;
 
         case 3: {modifico = true;
-
-                cout<<"ingrese la nueva password: ";
+                cout<<"ingrese la nueva contraseña ";
                 getline(cin, password);};break;
 
         case 4: {modifico = true;
-
                 cout<<"ingrese el nuevo correo: ";
-                getline(cin, correo);};break;
+                getline(cin, correo);} ;break;
 
         case 5: {modifico = true;
+                cout<<"ingrese la nueva membresia: ";
+                getline(cin, membresia);} ;break;
 
-                cout<<"ingrese el nuevo identidad: ";
-                getline(cin, identidad);};break;
+        case 6: {modifico = true;
+                cout<<"ingrese el nuevo saldo: ";
+                getline(cin, saldo);} ;break;
 
+        case 7: {modifico = true;
+                cout<<"ingrese el nuevo descuento: ";
+                getline(cin, descuento);} ;break;
+
+        case 8: {modifico = true;
+                cout<<"ingrese la nueva deuda: ";
+                getline(cin, deuda);} ;break;
+
+        case 9: {modifico = true;
+                bool aux = true;
+                cout<<"Ingrese activo [1] o inactivo [0] ";
+                cin>>aux;
+                if (aux) activo = "1";
+                else activo = "0";
+        }; break;
     }
-    all_regist_cli.push_back(numID+";" + nombre + ";" + apellido + ";" + password + ";" + correo + ";" + identidad);
+    all_regist_cli.push_back(numID+";" + nombre + ";" + password + ";" + correo + ";" + membresia + ";" + saldo +
+                             ";" + descuento + ";" + deuda + ";" + activo + ";");
 
 }
 
@@ -1643,97 +1811,15 @@ clienteArch.close();
     }
 
 system("pause");
-
 }
 
 
 
 
-
-
-
-
-//eliminar usuarios//
-void eliminarUsuarios(){
-system("cls");
-
-
-ifstream clienteArch("archivoCliente.csv", ios::in);
-if(!clienteArch){
-cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
-}
-else{
-vector<string>regist_cli_notDelete;
-
-
-int opc = 0;
-string buscarID;
-bool existe = false;
-string registro;
-string numID, nombre, apellido, password, correo, identidad;
-cout<<"ingrese numero de ID a buscar: ";
-cin>>buscarID;
-cout<<"\n\n////////////////////////////////////\n\n";
-
-while(getline(clienteArch, registro)){
-
-stringstream token(registro);
-getline(token,numID,';');
-getline(token,nombre,';');
-getline(token,apellido,';');
-getline(token,password,';');
-getline(token,correo,';');
-getline(token,identidad,';');
-
-if(buscarID.compare(numID) == 0 ) existe = true;
-
-else regist_cli_notDelete.push_back(registro);
-
-
-}
-
-clienteArch.close();
-
-
-
-    if (existe)/*if existe == true*/{
-        do{
-
-            cout<<"ESTA SEGURO DE ELIMINAR LA CUENTA???  1.[si] 0.[no]"<<endl;
-            cin>>opc;
-
-                if(opc == 1){
-                    ofstream nuevo("archivoCliente.csv");
-                    for(int i=0; i<int(regist_cli_notDelete.size()); i++){
-                    nuevo<<regist_cli_notDelete[i]<<endl;
-                    }
-                 nuevo.close();
-                cout<<"\n\nSe Elimino el cliente\n\n";
-                }
-
-                else break;
-
-
-
-    }while(opc < 0 || opc > 1);
-
-
-
-
-    }
-    else{
-    cout<<"el cliente "<<buscarID<<" no esxiste en el archivo\n\n";
-        }
-
-    }
-
-system("pause");
-
-}
 
 
 int main(){
-    generarArchivos();
+    //generarArchivos();
     menu();
     return 0;
 }

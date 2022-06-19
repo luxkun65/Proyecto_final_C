@@ -29,7 +29,6 @@ class Persona
         string getCorreo();
         bool getActivo();
 
-
     protected:
 
     long numID;
