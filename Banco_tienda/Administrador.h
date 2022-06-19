@@ -1,7 +1,8 @@
 #ifndef ADMINISTRADOR_H
 #define ADMINISTRADOR_H
 #include"Persona.h"
-#include <sstream>
+#include<iostream>
+using namespace::std;
 
 class Administrador:public Persona
 {
@@ -9,14 +10,14 @@ class Administrador:public Persona
         Administrador();
         virtual ~Administrador();
 
-        virtual void setSalario();
+        double salarioAdmin;
 
-        virtual double getSalario();
+        void setSalarioAdmin();
 
-        string toCSV();
+        double getSalarioAdmin();
 
     protected:
-        double salario;
+
     private:
 };
 

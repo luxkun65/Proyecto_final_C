@@ -182,3 +182,74 @@
 	"Prestamo.h"
 	"PQRS.h"
 
+1655618875 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+	<iostream>
+
+1655619244 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\administrador.h
+	"Persona.h"
+	<sstream>
+
+1655610471 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\articulo.cpp
+	"Articulo.h"
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\articulo.h
+	<iostream>
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\cliente.h
+	<sstream>
+	"Persona.h"
+
+1655619149 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<bits/stdc++.h>
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	"Articulo.h"
+	"Prestamo.h"
+	"PQRS.h"
+
+1655619244 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\trabajador.h
+	"Persona.h"
+	<sstream>
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\prestamo.h
+	"Cliente.h"
+	<iostream>
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\pqrs.h
+	"Cliente.h"
+	<iostream>
+
+1655617302 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\persona.cpp
+	"Persona.h"
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\pqrs.cpp
+	"PQRS.h"
+	"Cliente.h"
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\prestamo.cpp
+	"Prestamo.h"
+	"Cliente.h"
+
+1655618548 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+	"Cliente.h"
+	<iostream>
+

@@ -89,3 +89,48 @@
 	<sstream>
 	<vector>
 
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+	<iostream>
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\administrador.h
+	"Persona.h"
+	<iostream>
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\persona.h
+	<iostream>
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+	<iostream>
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\cliente.h
+	"Persona.h"
+	<iostream>
+
+1655613598 source:c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+
+1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\trabajador.h
+	"Administrador.h"
+	<iostream>
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstdlib>
+
+1655609399 source:c:\users\cesar\desktop\c++\proyecto_final_c\banco_tienda (original)\trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+	<iostream>
+
