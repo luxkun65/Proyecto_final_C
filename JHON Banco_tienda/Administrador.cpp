@@ -23,3 +23,9 @@ salario = 1000000*5;
 double Administrador::getSalario(){
 return salario;
 }
+
+
+string Administrador::toCSV(){
+return to_string(numID) + ";" + nom_usuario + ";" +
+           password + ";" + correo + ";" + to_string(activo);
+}

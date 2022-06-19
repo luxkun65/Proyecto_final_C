@@ -168,6 +168,7 @@ void login(){
 
             if((logUsername.compare(username) == 0)&&(logPassword.compare(password)==0)){
                 existe = true;
+                menuAdmin();
                 break;
             }
         }
@@ -202,16 +203,6 @@ void sign_up(){
         system("pause");
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 ///Acciones
@@ -873,82 +864,65 @@ system("cls");
 //Cliente
 if(aux==1){
 
-Cliente cli;
-
+ system("cls");
+    Cliente cli;
     ofstream clienteArch("archivoCliente.csv", ios::app);
     if(!clienteArch){
-    cout<<"Error al crear el archivo 'archivoCliente.csv'"<<endl;
-    }
-    else{
-
-    cli.setNumID();
-    if(getFrecuenciaCliente(to_string(cli.getNumID()))==0){
+        cout<<"Error al crear el archivo 'archivoCliente.csv'"<<endl;
+    }else{
+        cli.setNumID();
         cli.setNombre();
         cli.setApellido();
         cli.setPassword();
         cli.setCorreo();
 
-
-        clienteArch<<cli.toString()<<endl;
-
+        clienteArch<<cli.toCSV()<<endl;
         clienteArch.close();
 
-        cout<<"\n\nse ingreso correctamente el cliente\n\n";
-        }
-
-        else{
-        cout<<"El cliente con numero de ID "<<cli.getNumID()<<" ya existe\n\n";
-        clienteArch.close();
-        }
+        cout<<"\n\nUsuario creado exitosamente\n\n";
+        cout<<"Su informacion de usuario: "<<endl;
+        cout<<cli.toString();
+        system("pause");
+    }
 
 
 }
 system("pause");
-
-
-}
 
 
 
 //trabajador
  if(aux==2){
+        system("cls");
 Trabajador trab;
 
     ofstream trabajadorArch("archivoTrabajador.csv", ios::app);
     if(!trabajadorArch){
     cout<<"Error al crear el archivo 'archivoTrabajador.csv'"<<endl;
-    }
-    else{
-
-    trab.setNumID();
-    if(getFrecuenciaTrabajador(to_string(trab.getNumID())) == 0){
-    trab.setNombre();
-    trab.setApellido();
-    trab.setPassword();
-    trab.setCorreo();
-
-
-    trabajadorArch<<trab.toString()<<endl;
-
+    }else{
+        trab.setNumID();
+        trab.setNombre();
+        trab.setApellido();
+        trab.setPassword();
+        trab.setCorreo();
+    trabajadorArch<<trab.toCSV()<<endl;
     trabajadorArch.close();
 
     cout<<"\n\nse ingreso correctamente el trabajador\n\n";
-        }
-        else{
-        cout<<"El Trabajador con numero de ID "<<trab.getNumID()<<" ya existe\n\n";
-        trabajadorArch.close();
-        }
-
-system("pause");
-
+       cout<<"Su informacion de usuario: "<<endl;
+       cout<<trab.getNumID()<<endl;
+        cout<<trab.getNombre()<<endl;
+        cout<<trab.getApellido()<<endl;
+        cout<<trab.getPassword()<<endl;
+        cout<<trab.getCorreo()<<endl;
+        system("pause");
+    }
 
     }
-}
-
-
 
 //administrador
 if(aux==3){
+        system("cls");
 Administrador admin;
 
     ofstream administradorArch("archivoAdminstrador.csv", ios::app);
@@ -958,32 +932,36 @@ Administrador admin;
     else{
 
     admin.setNumID();
-    if(getFrecuenciaAdministrador(to_string(admin.getNumID())) == 0){
     admin.setNombre();
     admin.setApellido();
     admin.setPassword();
     admin.setCorreo();
-
-    administradorArch<<admin.toString()<<endl;
-
+    administradorArch<<admin.toCSV()<<endl;
     administradorArch.close();
 
-    cout<<"\n\nse ingreso correctamente el administrado\n\n";
+
+cout<<"\n\nse ingreso correctamente el administrador\n\n";
+       cout<<"Su informacion de usuario: "<<endl;
+       cout<<admin.getNumID()<<endl;
+        cout<<admin.getNombre()<<endl;
+        cout<<admin.getApellido()<<endl;
+        cout<<admin.getPassword()<<endl;
+        cout<<admin.getCorreo()<<endl;
+        system("pause");
         }
-        else{
-        cout<<"El Adminnistrador con numero de ID "<<admin.getNumID()<<" ya existe\n\n";
-        administradorArch.close();
-        }
+        //else{
+        //cout<<"El Administrador con numero de ID "<<admin.getNumID()<<" ya existe\n\n";
+        //administradorArch.close();
+        //}
 system("pause");
 
 
-    }
 }
 
 
 }while(opc != 0 );
-
 }
+
 
 
 
@@ -1050,6 +1028,7 @@ trabajadorArch.close();
 
 return cont;
 }
+
 
 
 
@@ -1124,45 +1103,31 @@ system("cls");
 
 if(aux==1){
 
-ifstream clienteArch("archivoCliente.csv", ios::in);
-if(!clienteArch){
-cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
-}
-else{
+    system("cls");
+    Cliente cli;
+    ofstream clienteArch("archivoCliente.csv", ios::app);
+    if(!clienteArch){
+        cout<<"Error al crear el archivo 'archivoCliente.csv'"<<endl;
+    }else{
+        cli.setNumID();
+        cli.setNombre();
+        cli.setApellido();
+        cli.setPassword();
+        cli.setCorreo();
 
-string registro;
-string numID, nombre, apellido, password, correo, identidad;
+        clienteArch<<cli.toCSV()<<endl;
+        clienteArch.close();
 
-cout<<"\n\n////////////////////////////////////\n\n";
-
-while(getline(clienteArch, registro)){
-
-stringstream token(registro);
-getline(token,numID,';');
-getline(token,nombre,';');
-getline(token,apellido,';');
-getline(token,password,';');
-getline(token,correo,';');
-getline(token,identidad,';');
-
-
-cout<<numID<<endl;
-cout<<nombre<<" "<<apellido<<endl;
-cout<<correo<<endl;
-cout<<identidad<<endl;
-cout<<"\n\n////////////////////////////////////\n\n";
-cont++;
-}
-cout<<"Hay un total de "<<cont<<" Clientes"<<endl;
-system("pause");
-clienteArch.close();
+        cout<<"\n\nUsuario creado exitosamente\n\n";
+        cout<<"Su informacion de usuario: "<<endl;
+        cout<<cli.toString();
+        system("pause");
+    }
 }
 
-}
 
 
 if(aux==2){
-
 ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
 if(!trabajadorArch){
 cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
@@ -1183,7 +1148,6 @@ getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
 getline(token,identidad,';');
-
 
 cout<<numID<<endl;
 cout<<nombre<<" "<<apellido<<endl;
@@ -1769,6 +1733,7 @@ system("pause");
 
 
 int main(){
+    generarArchivos();
     menu();
     return 0;
 }
