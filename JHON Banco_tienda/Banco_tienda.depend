@@ -4,6 +4,8 @@
 	"Persona.h"
 	<iostream>
 
+1655411202 
+
 1653767761 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.h
 	"Persona.h"
 	<iostream>
@@ -46,6 +48,8 @@
 	"Administrador.h"
 	"Persona.h"
 
+1655522863 "
+
 1655336148 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\administrador.h
 	"Persona.h"
 
@@ -74,6 +78,8 @@
 	"Cliente.h"
 	"Articulo.h"
 	"Prestamo.h"
+
+1655413023 h"
 
 1655336148 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\trabajador.h
 	"Persona.h"
@@ -106,4 +112,73 @@
 1655522638 c:\users\usuario\documents\ipoo_proyecto\proyecto_final_c-main\banco_tienda\pqrs.h
 	"Cliente.h"
 	<iostream>
+
+1655608401 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+	<iostream>
+
+1655608305 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Administrador.h
+	"Persona.h"
+
+1655602230 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Persona.h
+	<ctime>
+	<iostream>
+	<cstdlib>
+
+1655413023 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Articulo.cpp
+	"Articulo.h"
+
+1655412999 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Articulo.h
+	<iostream>
+
+1655425851 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+
+1655424314 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Cliente.h
+	<sstream>
+	"Persona.h"
+
+1655602230 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Persona.cpp
+	"Persona.h"
+
+1655522863 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/PQRS.cpp
+	"PQRS.h"
+	"Cliente.h"
+
+1655522638 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/PQRS.h
+	"Cliente.h"
+	<iostream>
+
+1655514123 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Prestamo.cpp
+	"Prestamo.h"
+	"Cliente.h"
+
+1655522247 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Prestamo.h
+	"Cliente.h"
+	<iostream>
+
+1655608472 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+	<iostream>
+
+1655608451 /home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/Trabajador.h
+	"Persona.h"
+	"Administrador.h"
+
+1655609031 source:/home/kali/Documents/C++/Proyecto_final_C /JHON Banco_tienda/main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<bits/stdc++.h>
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	"Articulo.h"
+	"Prestamo.h"
+	"PQRS.h"
 

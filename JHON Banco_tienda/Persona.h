@@ -19,7 +19,6 @@ class Persona
         void setPassword();
         void setNombreUsuario();
         void setCorreo();
-        void setActivo();
         void setActivo(bool);
 
         long getNumID();

@@ -1,9 +1,12 @@
 #include "Trabajador.h"
 #include"Persona.h"
+#include<iostream>
+using namespace::std;
 
 Trabajador::Trabajador()
 {
-    salarioTrab = 0;
+
+    salario = 0;
 }
 
 Trabajador::~Trabajador()
@@ -12,10 +15,10 @@ Trabajador::~Trabajador()
 }
 
 
-void Trabajador::setSalarioTrab(){
-salarioTrab = 1000000*2;
+void Trabajador::setSalario(){
+salario = 1000000*2;
 }
 
-double Trabajador::getSalarioTrab(){
-return salarioTrab;
+double Trabajador::getSalario(){
+return salario;
 }

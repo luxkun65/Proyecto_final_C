@@ -19,6 +19,8 @@ class Persona
         void setCorreo();
         void setIdentidad();
         string toString();
+        void setActivo(bool);
+
 
         int getNumID();
         string getNombre();
@@ -26,12 +28,14 @@ class Persona
         string getPassword();
         string getCorreo();
         string getIdentidad();
+        bool getActivo();
 
 
     protected:
 
     int numID;
     string nombre, apellido, password, correo, identidad;
+    bool activo;
 
     private:
 };

@@ -44,3 +44,48 @@
 	<iostream>
 	<cstdlib>
 
+1655445782 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Administrador.cpp
+	"Administrador.h"
+	"Persona.h"
+	<iostream>
+
+1655445782 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Administrador.h
+	"Persona.h"
+	<iostream>
+
+1655602161 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Persona.h
+	<iostream>
+
+1655445782 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Cliente.cpp
+	"Cliente.h"
+	"Persona.h"
+	<iostream>
+
+1655445782 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Cliente.h
+	"Persona.h"
+	<iostream>
+
+1655602161 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Persona.cpp
+	"Persona.h"
+	<iostream>
+	<cstdlib>
+
+1655445782 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Trabajador.cpp
+	"Trabajador.h"
+	"Persona.h"
+	<iostream>
+
+1655445782 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/Trabajador.h
+	"Administrador.h"
+	<iostream>
+
+1655606441 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda (ORIGINAL)/main.cpp
+	"Persona.h"
+	"Administrador.h"
+	"Trabajador.h"
+	"Cliente.h"
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+

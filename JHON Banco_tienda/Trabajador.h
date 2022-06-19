@@ -1,20 +1,18 @@
 #ifndef TRABAJADOR_H
 #define TRABAJADOR_H
 #include"Persona.h"
+#include "Administrador.h"
 
 
-class Trabajador:public Persona
+class Trabajador:public Administrador
 {
     public:
         Trabajador();
         virtual ~Trabajador();
 
-        double salarioTrab;
+         void setSalario();
 
-        void setSalarioTrab();
-
-        double getSalarioTrab();
-
+        double getSalario();
 
     protected:
 

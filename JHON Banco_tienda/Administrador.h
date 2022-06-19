@@ -8,14 +8,12 @@ class Administrador:public Persona
         Administrador();
         virtual ~Administrador();
 
-        double salarioAdmin;
+        virtual void setSalario();
 
-        void setSalarioAdmin();
-
-        double getSalarioAdmin();
+        virtual double getSalario();
 
     protected:
-
+        double salario;
     private:
 };
 

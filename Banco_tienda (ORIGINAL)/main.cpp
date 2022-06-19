@@ -54,8 +54,6 @@ void generalPQRS();
 
 
 
-
-
 ///GENERAL///
 void login(){
 
@@ -68,15 +66,13 @@ ifstream trabajadorArch("archivoTrabajador.csv", ios::in);
 ifstream administradorArch("archivoAdminstrador.csv", ios::in);
 
 //se pide la informacion para logearse
-string loginID, loginpassword,loginNombre;
+string loginID_Nombre, loginpassword;
 bool existe = false;
 int opc;
 string registro;
 string numID, nombre, apellido, password, correo, identidad;
-cout<<"ingrese su numero de ID(si no recuerda escriba un 0): ";
-cin>>loginID;
-cout<<"ingrese su nombre(si no recuerda escriba un 0)): ";
-cin>>loginNombre;
+cout<<"ingrese su numero de ID o Nombre de usuario: ";
+cin>>loginID_Nombre;
 cout<<"ingrese su password: ";
 cin>>loginpassword;
 
@@ -99,8 +95,12 @@ else{
         getline(token,correo,';');
         getline(token,identidad,';');
 
-        if(((loginID.compare(numID) == 0)||(loginNombre.compare(nombre) == 0))&&(loginpassword.compare(password)==0)){
+
+
+        if(((loginID_Nombre.compare(numID) == 0)||(loginID_Nombre.compare(nombre) == 0))&&(loginpassword.compare(password)==0)){
+
             existe = true;
+            system("read -p 'Press Enter to continue...' var");
             menuCli();
             break;
         }
@@ -127,9 +127,11 @@ else{
         getline(token,correo,';');
         getline(token,identidad,';');
 
-        if((loginID.compare(numID) == 0)&&(loginpassword.compare(password)==0)){
+        if(((loginID_Nombre.compare(numID) == 0)||(loginID_Nombre.compare(nombre) == 0))&&(loginpassword.compare(password)==0)){
             existe = true;
             menuTrab();
+
+
             break;
         }
     }
@@ -155,14 +157,16 @@ else{
         getline(token,correo,';');
         getline(token,identidad,';');
 
-        if((loginID.compare(numID) == 0)&&(loginpassword.compare(password)==0)){
+        if(((loginID_Nombre.compare(numID) == 0)||(loginID_Nombre.compare(nombre) == 0))&&(loginpassword.compare(password)==0)){
+            nombreusuario=nombre ;
+            idusuario = numID;
             existe = true;
             menuAdmin();
             break;
         }
     }
 administradorArch.close();
-if (!existe){cout<<"\nEl usuario "<<loginID<<" y/o la password "<<" no coinciden\n\n";}
+if (!existe){cout<<"\nEl usuario "<<loginID_Nombre<<" y/o la password "<<" no coinciden\n\n";}
 //system("pause");
 system("read -p 'Press Enter to continue...' var");
 }
@@ -175,7 +179,7 @@ system("clear");
 //system("cls");
 
 cout<<"Desea salir o logearse nuevamente?"<<endl;
-cout<<"1.Loginearse"<<endl;
+cout<<"1.Logearse"<<endl;
 cout<<"0.Salir"<<endl;
 cin>>opc;
 switch(opc){
@@ -1166,53 +1170,6 @@ system("read -p 'Press Enter to continue...' var");
 
 
 
-
-
-
-//lista de PQRS con contador//
-void listaPQRS(){
-
-}
-//buscar PQRS con contador//
-void buscarPQRS(){
-
-}
-//Agregar $$ a cuenta de cliente//
-//restar $$ a cuenta de cliente//
-
-
-//revisar PQRS; Eliminar personas;
-
-
-
-
-
-
-
-
-
-
-
-///ACCESO CLIENTE///
-//menu//
-void menuCli(){}
-//Generador de PQRS//
-void generalPQRS(){
-
-
-}
-//agregar $$ a la cuenta//
-
-
-
-
-
-
-
-
-
-
-void menuTrab(){cout<<"el trabajador existe";}
 
 
 int main()
