@@ -96,7 +96,6 @@ void login(){
     fflush(stdin);
     cout<<"ingrese su nombre de usuario: ";
     getline(cin,logUsername);
-    getline(cin,logUsername);
     fflush(stdin);
     cout<<"ingrese su password: ";
     getline(cin,logPassword);
@@ -805,8 +804,8 @@ void menuAdmin(){
 int opc;
 
 do{
-system("clear");
-//system("cls");
+
+system("cls");
 cout<<"Menu de opciones"<<endl;
 cout<<"1.Crear nuevas personas"<<endl;
 cout<<"2.Listado general"<<endl;
@@ -823,12 +822,12 @@ case 4: modificarUsuarios();break;
 case 5: eliminarUsuarios();break;
 case 0: break;
 default: {  cout<<"Opcion incorrecta"<<endl;
-            //system("pause");
-            system("read -p 'Press Enter to continue...' var");}
+            system("pause");
+            }
 }
 
-system("clear");
-//system("cls");
+
+system("cls");
 }while(opc !=0 );
 
 
@@ -843,8 +842,8 @@ int opc;
 
 do{
 
-system("clear");
-//system("cls");
+
+system("cls");
 
 int aux = 0;
 opc = 0;
@@ -861,13 +860,13 @@ switch(opc){
     case 3:aux=3;break;
     case 0:aux=0;break;
     default: {  cout<<"Opcion incorrecta"<<endl;
-            //system("pause");
-            system("read -p 'Press Enter to continue...' var");}
+            system("pause");
+            }
 
     }
 
-system("clear");
-//system("cls");
+
+system("cls");
 
 
 
@@ -904,8 +903,8 @@ Cliente cli;
 
 
 }
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 
 }
 
@@ -940,8 +939,8 @@ Trabajador trab;
         trabajadorArch.close();
         }
 
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 
     }
 }
@@ -975,8 +974,8 @@ Administrador admin;
         cout<<"El Adminnistrador con numero de ID "<<admin.getNumID()<<" ya existe\n\n";
         administradorArch.close();
         }
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 
     }
 }
@@ -1094,8 +1093,8 @@ int opc;
 
 do{
 
-system("clear");
-//system("cls");
+
+system("cls");
 
 int aux = 0;
 int cont = 0;
@@ -1113,13 +1112,13 @@ switch(opc){
     case 3:aux=3;break;
     case 0:aux=0;break;
     default:{  cout<<"Opcion incorrecta"<<endl;
-            //system("pause");
-            system("read -p 'Press Enter to continue...' var");}
+            system("pause");
+          }
 
     }
 
-system("clear");
-//system("cls");
+
+system("cls");
 
 
 
@@ -1155,8 +1154,7 @@ cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
 cout<<"Hay un total de "<<cont<<" Clientes"<<endl;
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
 clienteArch.close();
 }
 
@@ -1195,8 +1193,7 @@ cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
 cout<<"Hay un total de "<<cont<<" Trabajadores"<<endl;
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
 trabajadorArch.close();
 }
 
@@ -1234,9 +1231,10 @@ cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
-//system("pause");
+
 cout<<"Hay un total de "<<cont<<" Administradores"<<endl;
-system("read -p 'Press Enter to continue...' var");
+
+system("pause");
 administradorArch.close();
 }
 
@@ -1256,8 +1254,8 @@ int opc;
 
 do{
 
-system("clear");
-//system("cls");
+
+system("cls");
 
 int aux = 0;
 opc = 0;
@@ -1276,14 +1274,14 @@ switch(opc){
     case 4:aux=4;break;
     case 0:aux=0;break;
     default:{  cout<<"Opcion incorrecta"<<endl;
-            //system("pause");
-            system("read -p 'Press Enter to continue...' var");}
+            system("pause");
+     }
 
     }
 
 
-system("clear");
-//system("cls");
+
+system("cls");
 
 
 
@@ -1323,14 +1321,14 @@ cout<<"\n\n////////////////////////////////////\n\n";
 }
 
 }
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 clienteArch.close();
 
 if (!existe){
 cout<<"el cliente "<<buscarID<<" no esxiste\n";
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
     }
 }
 }
@@ -1371,14 +1369,14 @@ cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
     }
 }
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 trabajadorArch.close();
 
 if (!existe){
 cout<<"el trabajador "<<buscarID<<" no esxiste\n";
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
     }
 }
 }
@@ -1419,14 +1417,14 @@ cout<<identidad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 }
 }
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 administradorArch.close();
 
 if (!existe){
 cout<<"No existe el administrador "<<buscarID<<endl;
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
     }
 }
 }
@@ -1550,8 +1548,8 @@ cout<<"No existe el Administrador "<<buscarID<<endl;
             }
         }
 
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 
     }
 
@@ -1568,8 +1566,8 @@ system("read -p 'Press Enter to continue...' var");
 
 //Modificador de usuarios//
 void modificarUsuarios(){
-system("clear");
-//system("cls");
+
+system("cls");
 
 
 ifstream clienteArch("archivoCliente.csv", ios::in);
@@ -1622,27 +1620,27 @@ cout<<"\n\n////////////////////////////////////\n\n";
     switch(opc){
 
         case 1:{modifico = true;
-        getline(cin, nombre);///////////////////Linux////////
+
                 cout<<"ingrese el nuevo nombre: ";
                 getline(cin, nombre);};break;
 
         case 2: {modifico = true;
-        getline(cin, apellido);////////////////linux//////////////
+
                 cout<<"ingrese el nuevo apellido: ";
                 getline(cin, apellido);};break;
 
         case 3: {modifico = true;
-        getline(cin, password);////////////////////linux//////////////
+
                 cout<<"ingrese la nueva password: ";
                 getline(cin, password);};break;
 
         case 4: {modifico = true;
-        getline(cin, correo);//////////////////////////linux//////////////////
+
                 cout<<"ingrese el nuevo correo: ";
                 getline(cin, correo);};break;
 
         case 5: {modifico = true;
-        getline(cin, identidad);////////////////////linux//////////////
+
                 cout<<"ingrese el nuevo identidad: ";
                 getline(cin, identidad);};break;
 
@@ -1680,8 +1678,8 @@ clienteArch.close();
 
     }
 
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 }
 
 
@@ -1693,8 +1691,7 @@ system("read -p 'Press Enter to continue...' var");
 
 //eliminar usuarios//
 void eliminarUsuarios(){
-system("clear");
-//system("cls");
+system("cls");
 
 
 ifstream clienteArch("archivoCliente.csv", ios::in);
@@ -1766,8 +1763,8 @@ clienteArch.close();
 
     }
 
-//system("pause");
-system("read -p 'Press Enter to continue...' var");
+system("pause");
+
 }
 
 

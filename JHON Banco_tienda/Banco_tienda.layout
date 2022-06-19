@@ -2,39 +2,58 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Cliente.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="30716" topLine="399" />
+			<Cursor1 position="339" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Persona.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="750" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="35124" topLine="153" />
 		</Cursor>
 		<Folding>
 			<Collapse line="82" />
-			<Collapse line="182" />
-			<Collapse line="219" />
-			<Collapse line="241" />
-			<Collapse line="309" />
-			<Collapse line="324" />
-			<Collapse line="357" />
-			<Collapse line="386" />
-			<Collapse line="394" />
-			<Collapse line="433" />
-			<Collapse line="467" />
-			<Collapse line="491" />
-			<Collapse line="513" />
-			<Collapse line="527" />
-			<Collapse line="539" />
-			<Collapse line="555" />
-			<Collapse line="569" />
-			<Collapse line="603" />
-			<Collapse line="633" />
-			<Collapse line="687" />
-			<Collapse line="720" />
-			<Collapse line="750" />
-			<Collapse line="769" />
+			<Collapse line="218" />
+			<Collapse line="240" />
+			<Collapse line="308" />
+			<Collapse line="323" />
+			<Collapse line="356" />
+			<Collapse line="385" />
+			<Collapse line="393" />
+			<Collapse line="432" />
+			<Collapse line="466" />
+			<Collapse line="490" />
+			<Collapse line="512" />
+			<Collapse line="526" />
+			<Collapse line="538" />
+			<Collapse line="554" />
+			<Collapse line="568" />
+			<Collapse line="602" />
+			<Collapse line="632" />
+			<Collapse line="686" />
+			<Collapse line="719" />
+			<Collapse line="749" />
+			<Collapse line="768" />
 		</Folding>
 	</File>
 	<File name="Trabajador.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="88" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Prestamo.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="379" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Administrador.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="122" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Articulo.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -47,29 +66,19 @@
 			<Cursor1 position="113" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Prestamo.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Cliente.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="379" topLine="0" />
+			<Cursor1 position="182" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="Cliente.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="339" topLine="0" />
-		</Cursor>
+		<Folding>
+			<Collapse line="12" />
+			<Collapse line="74" />
+			<Collapse line="86" />
+		</Folding>
 	</File>
 	<File name="Prestamo.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="570" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="Administrador.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="122" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Administrador.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="177" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Persona.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -89,24 +98,14 @@
 			<Collapse line="91" />
 		</Folding>
 	</File>
-	<File name="Cliente.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="182" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="12" />
-			<Collapse line="74" />
-			<Collapse line="86" />
-		</Folding>
-	</File>
 	<File name="Articulo.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="11" />
 		</Cursor>
 	</File>
-	<File name="Persona.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="Administrador.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="750" topLine="21" />
+			<Cursor1 position="177" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
