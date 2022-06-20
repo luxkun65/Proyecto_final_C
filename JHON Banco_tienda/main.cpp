@@ -887,9 +887,11 @@ void trabajador1(){
 void trabajador2(){
     system("cls");
     cout<<"Para dar de baja a un cliente debe de iniciar sesion en su cuenta, se le desplegara"<<endl;
-    cout<<"un menu, en dicho menu debe seleccional la opcion 'eliminar un cliente', debe ingresar"<<endl;
-    cout<<"el numero de ID de el cliente a eliminar, le pedira la confirmacion de si en verdad desea"<<endl;
-    cout<<"dar de baja la cuenta del cliente, debe confirmar y el cliente pasara a estado inactivo."<<endl;
+    cout<<"un menu, en dicho menu debe seleccionar la opcion 'dar de baja la cuenta de un cliente', debe ingresar"<<endl;
+    cout<<"el numero de ID de el cliente a eliminar, posterior a esto se le desplegara el menu"<<endl;
+    cout<<"de modificacion//eliminacion del usuario, en dicho menu debe escoger la opcion 9, y cambiar"<<endl;
+    cout<<"el estado de cuenta de 1 (activo)n a 0 (inactivo)"<<endl;
+    cout<<"debe confirmar y el cliente pasara a estado inactivo."<<endl;
 
 }
 
@@ -1107,7 +1109,6 @@ system("pause");
 }
 
 
-
 //busca la cantidad de codigos iguales//
 
 int getFrecuenciaCliente(string num_id_buscar){
@@ -1250,7 +1251,7 @@ cout<<"error al abrir el archivo 'archivoCliente.csv'"<<endl<<endl;
 else{
 
 string registro;
-string numID, nombre, apellido, password, correo;
+string numID, nombre, password, correo, membresia;
 
 cout<<"\n\n////////////////////////////////////\n\n";
 
@@ -1259,13 +1260,13 @@ while(getline(ClienArch, registro)){
 stringstream token(registro);
 getline(token,numID,';');
 getline(token,nombre,';');
-getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
-
-cout<<numID<<endl;
-cout<<nombre<<" "<<apellido<<endl;
-cout<<correo<<endl;
+getline(token,membresia,';');
+cout<<"Numero de ID: "<<numID<<endl;
+cout<<"Nombre de usuario: "<<nombre<<endl;
+cout<<"Correo: "<<correo<<endl;
+cout<<"membresia: "<<membresia<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
@@ -1286,7 +1287,7 @@ cout<<"error al abrir el archivo 'archivoTrabajador.csv'"<<endl<<endl;
 else{
 
 string registro;
-string numID, nombre, apellido, password, correo;
+string numID, nombre, password, correo;
 
 cout<<"\n\n////////////////////////////////////\n\n";
 
@@ -1295,13 +1296,13 @@ while(getline(trabajadorArch, registro)){
 stringstream token(registro);
 getline(token,numID,';');
 getline(token,nombre,';');
-getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
 
-cout<<numID<<endl;
-cout<<nombre<<" "<<apellido<<endl;
-cout<<correo<<endl;
+cout<<"Numero de ID: "<<numID<<endl;
+cout<<"Nombre de usuario: "<<nombre<<endl;
+cout<<"password: "<<password<<endl;
+cout<<"Correo: "<<correo<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
@@ -1322,7 +1323,7 @@ cout<<"error al abrir el archivo 'archivoAdminstrador.csv'"<<endl<<endl;
 else{
 
 string registro;
-string numID, nombre, apellido, password, correo;
+string numID, nombre, password, correo;
 
 cout<<"\n\n////////////////////////////////////\n\n";
 
@@ -1331,14 +1332,15 @@ while(getline(administradorArch, registro)){
 stringstream token(registro);
 getline(token,numID,';');
 getline(token,nombre,';');
-getline(token,apellido,';');
 getline(token,password,';');
 getline(token,correo,';');
 
 
-cout<<numID<<endl;
-cout<<nombre<<" "<<apellido<<endl;
-cout<<correo<<endl;
+cout<<"Numero de ID: "<<numID<<endl;
+cout<<"Nombre de usuario: "<<nombre<<endl;
+cout<<"password: "<<password<<endl;
+cout<<"Correo: "<<correo<<endl;
+
 cout<<"\n\n////////////////////////////////////\n\n";
 cont++;
 }
@@ -1712,7 +1714,7 @@ getline(token,activo,';');
 
 if(buscarID.compare(numID) == 0 ){
 existe = true;
-cout<<"Datos actuales del cliente a modificar::"<<endl<<endl;
+cout<<"Datos actuales del cliente a modificar//eliminar:"<<endl<<endl;
 cout<<"1.Numero de ID == "<<numID<<endl;
 cout<<"2.Nombre == "<<nombre<<endl;
 cout<<"3.Password == "<<password<<endl;
