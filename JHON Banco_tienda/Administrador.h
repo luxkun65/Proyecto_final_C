@@ -9,14 +9,9 @@ class Administrador:public Persona
         Administrador();
         virtual ~Administrador();
 
-        virtual void setSalario();
-
-        virtual double getSalario();
-
         string toCSV();
 
     protected:
-        double salario;
     private:
 };
 
