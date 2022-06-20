@@ -182,16 +182,16 @@
 	"Prestamo.h"
 	"PQRS.h"
 
-1655618875 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\administrador.cpp
+1655692277 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\administrador.cpp
 	"Administrador.h"
 	"Persona.h"
 	<iostream>
 
-1655619244 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\administrador.h
+1655692331 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\administrador.h
 	"Persona.h"
 	<sstream>
 
-1655610471 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\persona.h
+1655673236 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\persona.h
 	<ctime>
 	<iostream>
 	<cstdlib>
@@ -206,11 +206,11 @@
 	"Cliente.h"
 	"Persona.h"
 
-1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\cliente.h
+1655662553 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\cliente.h
 	<sstream>
 	"Persona.h"
 
-1655619149 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\main.cpp
+1655688536 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\main.cpp
 	<iostream>
 	<fstream>
 	<sstream>
@@ -224,9 +224,10 @@
 	"Prestamo.h"
 	"PQRS.h"
 
-1655619244 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\trabajador.h
+1655692331 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\trabajador.h
 	"Persona.h"
 	<sstream>
+	"Administrador.h"
 
 1655609399 c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\prestamo.h
 	"Cliente.h"
@@ -247,7 +248,7 @@
 	"Prestamo.h"
 	"Cliente.h"
 
-1655618548 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\trabajador.cpp
+1655692270 source:c:\users\cesar\desktop\c++\proyecto_final_c\jhon banco_tienda\trabajador.cpp
 	"Trabajador.h"
 	"Persona.h"
 	"Cliente.h"

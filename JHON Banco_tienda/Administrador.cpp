@@ -6,7 +6,6 @@ using namespace::std;
 Administrador::Administrador()
 {
 
-    salario = 0;
 }
 
 Administrador::~Administrador()
@@ -15,14 +14,6 @@ Administrador::~Administrador()
 }
 
 
-void Administrador::setSalario(){
-salario = 1000000*5;
-}
-
-
-double Administrador::getSalario(){
-return salario;
-}
 
 
 string Administrador::toCSV(){

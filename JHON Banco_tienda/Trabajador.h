@@ -2,17 +2,15 @@
 #define TRABAJADOR_H
 #include"Persona.h"
 #include<sstream>
+#include "Administrador.h"
 
 
-class Trabajador:public Persona
+class Trabajador:public Administrador
 {
     public:
-        long salario;
         Trabajador();
         virtual ~Trabajador();
 
-         void setSalario();
-        double getSalario();
         string toCSV();
 
     protected:
