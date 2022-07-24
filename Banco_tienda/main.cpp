@@ -11,6 +11,7 @@ using namespace::std;
 ///general///
 void login();
 void salida();
+void registro();
 
 ///administrador///
 void menuAdmin();
@@ -2004,7 +2005,7 @@ cout<<"actividad == "<<actividad<<endl;
 cout<<"\n\n////////////////////////////////////\n\n";
 
     do{
-        cout<<"DESEA ELIMINAR LA CUENTA???\n\n";
+        cout<<"DESEA CAMBIAR LA ACTIVIDAD DE LA CUENTA???\n\n";
         opc=1;
 
     }while(opc < 0 || opc > 1);
@@ -2016,7 +2017,8 @@ cout<<"\n\n////////////////////////////////////\n\n";
         bool aux=0;
         cout<<"ingrese 1.[si] 0.[no]: ";
         cin>>aux;
-        if(aux) actividad = "inactiva";
+        if(aux && actividad=="activa") actividad = "inactiva";
+        else actividad = "activa";
                 };break;
 
 
@@ -2137,8 +2139,8 @@ cout<<"\n\n////////////////////////////////////\n\n";
         bool aux=0;
         cout<<"ingres 1.[activo] 0.[inactivo]: ";
         cin>>aux;
-        if(aux) actividad = "activa";
-        else actividad = "inactiva";
+        if(aux && actividad=="activa") actividad = "inactiva";
+        else actividad = "activa";
                 };break;
 
 
@@ -2261,8 +2263,8 @@ cout<<"\n\n////////////////////////////////////\n\n";
         bool aux=0;
         cout<<"ingres 1.[activo] 0.[inactivo]: ";
         cin>>aux;
-        if(aux) actividad = "activa";
-        else actividad = "inactiva";
+        if(aux && actividad=="activa") actividad = "inactiva";
+        else actividad = "activa";
                 };break;
 
 

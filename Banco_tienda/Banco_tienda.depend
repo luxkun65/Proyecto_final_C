@@ -1,26 +1,26 @@
 # depslib dependency file v1.0
-1655437336 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.cpp
+1655445782 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.cpp
 	"Administrador.h"
 	"Persona.h"
 	<iostream>
 
-1655437310 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.h
+1655445782 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Administrador.h
 	"Persona.h"
 	<iostream>
 
-1655438321 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.h
+1655648923 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.h
 	<iostream>
 
-1653767242 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.cpp
+1655646095 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.cpp
 	"Cliente.h"
 	"Persona.h"
 	<iostream>
 
-1653765886 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.h
+1655647352 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Cliente.h
 	"Persona.h"
 	<iostream>
 
-1655445427 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/main.cpp
+1658680782 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/main.cpp
 	"Persona.h"
 	"Administrador.h"
 	"Trabajador.h"
@@ -30,16 +30,16 @@
 	<sstream>
 	<vector>
 
-1655437455 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.h
+1655445782 /home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.h
 	"Administrador.h"
 	<iostream>
 
-1655437409 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.cpp
+1655445782 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Trabajador.cpp
 	"Trabajador.h"
 	"Persona.h"
 	<iostream>
 
-1655443010 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.cpp
+1655649194 source:/home/kali/Documents/C++/Proyecto_final_C /Banco_tienda/Persona.cpp
 	"Persona.h"
 	<iostream>
 	<cstdlib>
